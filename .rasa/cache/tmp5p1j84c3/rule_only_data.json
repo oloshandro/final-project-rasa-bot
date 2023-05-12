@@ -1,0 +1,7 @@
+{
+  "rule_only_slots": [],
+  "rule_only_loops": [
+    "contact_us_form",
+    "newsletter_form"
+  ]
+}

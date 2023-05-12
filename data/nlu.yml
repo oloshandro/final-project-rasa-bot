@@ -1,0 +1,313 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - heya
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - yep
+    - yeah
+    - indeed
+    - that's right
+    - ok
+    - great
+    - correct
+    - perfect
+    - sounds good
+    - sounds great
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - nope
+    - not true
+    - no thanks
+    - nah
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - fine
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - are you a robot?
+    - am I talking to an actual person?
+    - you're a bot aren't you?
+    - are you even a real person?
+    - are you ai
+
+- intent: thank
+  examples: |
+    - thanks!
+    - thank you
+    - thanks a lot
+    - great thanks
+    - appreciate it
+    - cool thanks
+    - Cool. Thanks
+    - Great, thanks
+    - Thank you so much
+    - Thank's!
+    - Thanks bot
+    - Thanks for that
+    - Thanks!
+    - amazing, thanks
+    - cool thank you
+    - cool, thanks
+    - great thanks
+    - perfect thank you
+    - thank u
+    - thanks a lot
+    - thanks for the help
+    - thnks
+    - thx
+    - yes thanks
+    - thanks for your information 
+
+- intent: contact_us #button
+  examples: |
+    - I want a human
+    - can I speak to an agent
+    - real agent please
+    - give me a person please
+    - i want to talk to a human
+    - can you transfer me to a human?
+    - i need to talk to a human
+    - i need help from a real human
+    - i want a representative
+    - i want to talk to a person
+    - I don't wanna talk to a bot
+    - I dont like to talk to a machine
+    - are there also humans working for your company?
+    - can you forward me to your team
+    - do you have human support ?
+    - i want to speak to a real person
+    - i want to speak to customer service
+    - let me talk to a real person
+    - that's annoying I'd like to speak to someone real
+    - thats not helping, can i talk to human?
+    - i want to chat with human
+    - How do I talk to a human
+    - I want to contact you
+    - Can you contact me?
+    - I'd like to contact you 
+  
+- intent: help
+  examples: |
+    - help
+    - I need help
+    - I need assistance
+    - What can I ask you?
+    - What can I do?
+    - What can you demo
+    - What can you do for me?
+    - can you please help me
+    - problem
+    - big problem
+    - How can you help me
+    - How you help me?
+
+- intent: unclear
+  examples: |
+    - what is the square root of 5
+    - I want to know the weather
+    - what is the meaning of life.
+    - Fridge Isn't Running
+    - my tv isn't working
+    - I want a pizza
+    - my washing machine isn't working
+    - what year is it
+    - order a pizza
+    - I want to order a pizza
+    - what is the weather today
+    - what is the weather
+    - how old are you?
+    - add two plus two
+    - Hdjejene
+    - asd
+    - title
+    - how about the forecast
+    - foolish
+    - joke
+    - Can I get a hamburger?
+    - Can YouTube talk?
+    - Can you call me back ?
+    - Can you give me your datacenter's password
+    - Can you give me your datacenter's password?
+    - Can you make sandwiches?
+    - Can you please send me an uber
+
+
+# creating retrieval intents for FAQs
+- intent: faq/company_info #button
+  examples: |
+    - What do you do?
+    - What's your speciality?
+    - What you you work on?
+    - Tell me about Annea
+    - Tell me about your company
+    - Tell about your services
+    - Give information about your company
+    - What are your services?
+    - how your technology works
+    - What is Annea about? 
+
+- intent: faq/company_solution  #button
+  examples: |
+    - How does your solution work?
+    - What make your service special?
+    - What's your expertise?
+    - How does our solution work?
+
+- intent: faq/prediction #button
+  examples: |
+    - How accurate is your energy production forecast?
+    - How good is your solution?
+    - How good is your prediction?
+    - How accurate is our energy production forecast? 
+    - Can we predict the failure of the machine?
+
+- intent: faq/team #button
+  examples: |
+    - Who works at the company
+    - Tell about your team
+    - Who works in your team?
+
+- intent: price
+  examples: |
+    - How much?
+    - What's the price?
+    - How much it cost?
+    - Cost?
+    - What is the price of your products?
+
+# - intent: faq/book_meeting #button
+# examples: |
+#     - I would like to know more about your product.
+#     - 
+
+
+- intent: subscribe_to_newsletter  #button
+  examples: |
+    - I want to get the newsletter
+    - Can you send me the newsletter?
+    - Can you sign me up for the newsletter?
+    - I want to subscribe to your newsletter
+    - Newsletter
+    - I need newsletter
+
+
+- intent: inform
+  examples: |
+    - My email is [example@example.com](email)
+    - [random@example.com](email)
+    - Please send it to [anything@example.com](email)
+    - Email is [something@example.com](email)
+    - It is [example@something.com](email)
+    - My name is [John Smith](name)
+    - I'm [John](name)
+    - [Veronica Beckhem](name)
+    - [Veronica](name)
+    - Call me [Bond](name)
+    - [James](name)
+
+
+# - intent: contact_us #button
+#   examples: |
+#     - I want to subscribe to your newsletter
+#     - newsletter
+
+
+- intent: book_meeting #button
+  examples: |
+    - I would like to book a meeting
+    - Schedule a Meeting
+    - I want to talk to a real person
+    - I have a lot of questions
+
+- intent: stop
+  examples: |
+    - stop
+    - nevermind
+    - please stop
+    - i want to stop
+    - stop the form
+
+# - regex: name
+#   examples: |
+#     - [A-Z][a-z]+
+
+
+
+
+

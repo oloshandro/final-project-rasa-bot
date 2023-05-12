@@ -1,0 +1,43 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+- rule: respond to FAQs
+  steps:
+  - intent: faq
+  - action: utter_info_found
+  - action: utter_faq
+  - action: utter_did_that_help
+
+
+- rule: activate subscribe form
+  steps:
+  - intent: subscribe_to_newsletter
+  - action: utter_newsletter
+  - action: newsletter_form
+  - active_loop: newsletter_form
+
+- rule: submit newsletter form
+  condition:
+  - active_loop: newsletter_form
+  steps:
+  - action: newsletter_form
+  - active_loop: null
+  - action: utter_subscribed
+
+- rule: Activate contact_us_form
+  steps:
+    - intent: contact_us
+    - action: utter_contact_us
+    - action: contact_us_form
+    - active_loop: contact_us_form

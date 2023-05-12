@@ -1,0 +1,22 @@
+{
+  "utter_faq/company_info": [
+    {
+      "text": "Annea is an All-in-One Platform for Renewable Energy. Our unique end-to-end solutions enable us to create digital twins of each component of your machines through cutting-edge artificial intelligence, physical modelling and normal behaviour modelling. \n The ANNEA Platform contains several modules that bring your operations and maintenance to the next level: Failure Prediction, Energy Production Forecast, Performance Optimisation, Image Recognition. \n Here's also the video about us: https://www.youtube.com/watch?v=_TXSPL_UkCQ&ab_channel=ANNEA"
+    }
+  ],
+  "utter_faq/company_solution": [
+    {
+      "text": "Annea has expertise in implementation, pipelining and effective computing with end-to-end solutions for big data architectures; combining physical and data-driven models to enable a thorough health condition and life-cycle analysis; real-time monitoring, and automated failure prediction by using vibration, operation, and meteorological data. \n Using a customized data acquisition process we create a digital twin of each component of your machines. All the information is transmitted to the dashboard, which provides an overview of the health status and the life cycle of each component of your machines."
+    }
+  ],
+  "utter_faq/prediction": [
+    {
+      "text": "Our approach allows us to achieve 84% accuracy in the energy production forecast and predict future failures up to 12 months in advance. "
+    }
+  ],
+  "utter_faq/team": [
+    {
+      "text": "We are passionate about delivering the best experiences for all of our stakeholders with high standards. We push our limits together to deliver the possibilities of tomorrow that we see on the horizon distinctly. \n We are formed by a team of experts with varying backgrounds and multiple years of experience in the energy sector. The cultural diversity we have in our environment increases our creativity, productivity, punctuality and ability to grow and operate internationally. We strongly believe this is a key factor for our success."
+    }
+  ]
+}

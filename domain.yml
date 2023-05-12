@@ -1,0 +1,206 @@
+version: "3.1"
+
+intents:
+  - faq:
+      is_retrieval_intent: true
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - thank 
+  - contact_us 
+  - help
+  - unclear
+  - price
+  - subscribe_to_newsletter
+  - inform
+  - book_meeting
+  - stop
+
+entities:
+  - name
+  - email
+
+slots:
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+      conditions:
+      - active_loop: newsletter_form
+        requested_slot: email
+      - active_loop: contact_us_form
+        requested_slot: email
+
+  name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      entity: name
+      conditions:
+      - active_loop: contact_us_form
+        requested_slot: name
+
+  message:
+    type: any
+    influence_conversation: false
+    mappings:
+      - type: from_text
+        
+forms:
+  newsletter_form:
+    required_slots:
+      - email
+  
+  contact_us_form:
+    required_slots:
+      - name 
+      - email
+      - message
+
+# general responses
+responses:
+  utter_greet:
+  - text: "Hey there! How are you?"
+  - text: "Hey! How are you?"
+  - text: "Hi! How are you?"
+  - text: "Hey! How's your day going?"
+  - text: "Hi! How are you today?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_happy: 
+  - text: "Great, carry on!"
+  - text: "Happy to hear that!"
+
+  utter_welcome: 
+  - text: "You're welcome!"
+  - text: "No problem!"
+  - text: "Any time!"
+  - text: "Anything else I can help you with?" #
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Talk to you later"
+  - text: "Goodbye"
+  - text: "Have a nice day"
+  - text: "See you around"
+  - text: "Bye bye"
+  - text: "See you later"
+
+  utter_iamabot:
+  - text: "I am a bot assistant."
+
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+  - text: "Was it useful?"
+  - text: "Is that what you needed?"
+  - text: "I hope it helped."
+
+  utter_unclear: 
+  - text: "I am not sure what you are aiming for. Please, type 'help' for assistance."
+  - text: "What do you mean? Could you clarify or type 'help' for assistance."
+  - text: "I'm not quite sure what you want. Please, type 'help' for assistance."
+  - text: "Sorry, I'm not sure how to respond to that. Please, type 'help' for assistance."
+  - text: "Sorry, I don't quite understand. Please, type 'help' for assistance."
+  
+  utter_info_found:
+  - text: "OK, this is what I know: "
+  - text: "Here you go: "
+  - text: "Here you are: "
+
+
+  utter_help:
+    - text: "I can help you with the things like or you can type a message below"
+      buttons:
+      - title: "About us"
+        payload: "/company_info"
+      - title: "Our solution"
+        payload: "/company_solution"
+      - title: "Our team"
+        payload: "/company_team"
+      - title: "Book a meeting"
+        payload: "/book_meeting"
+      - title: "Contact us"
+        payload: "/contact_us"
+      - title: "Subscribe to a newsletter"
+        payload: "/subscribe_to_newsletter"
+
+# FAQs responses
+  utter_faq/company_info:
+    - text: "Annea is an All-in-One Platform for Renewable Energy. Our unique end-to-end solutions enable us to create digital twins of each component of your machines through cutting-edge artificial intelligence, physical modelling and normal behaviour modelling. \n The ANNEA Platform contains several modules that bring your operations and maintenance to the next level: Failure Prediction, Energy Production Forecast, Performance Optimisation, Image Recognition. \n Here's also the video about us: https://www.youtube.com/watch?v=_TXSPL_UkCQ&ab_channel=ANNEA"
+    
+    # - attachment:
+    #   type: "video"
+    #   payload: "https://www.youtube.com/watch?v=_TXSPL_UkCQ&ab_channel=ANNEA"
+  
+  utter_faq/company_solution:
+    - text: "Annea has expertise in implementation, pipelining and effective computing with end-to-end solutions for big data architectures; combining physical and data-driven models to enable a thorough health condition and life-cycle analysis; real-time monitoring, and automated failure prediction by using vibration, operation, and meteorological data. \n Using a customized data acquisition process we create a digital twin of each component of your machines. All the information is transmitted to the dashboard, which provides an overview of the health status and the life cycle of each component of your machines."
+  
+  utter_faq/prediction:
+    - text: "Our approach allows us to achieve 84% accuracy in the energy production forecast and predict future failures up to 12 months in advance. "
+  
+  utter_faq/team:
+    - text: "We are passionate about delivering the best experiences for all of our stakeholders with high standards. We push our limits together to deliver the possibilities of tomorrow that we see on the horizon distinctly. \n We are formed by a team of experts with varying backgrounds and multiple years of experience in the energy sector. The cultural diversity we have in our environment increases our creativity, productivity, punctuality and ability to grow and operate internationally. We strongly believe this is a key factor for our success."
+  
+  utter_price:
+    - text: "We offer a free trial of our product. To get an accurate pricing model for your business needs please contact us or book a meeting."
+
+
+# responses for newsletter subscription      
+  utter_newsletter:
+    - text: ANNEA newsletter provides relevant up-to-date information, keeping you informed on our company updates and the latest technologies in the renewable energy industry. To subscribe, please, type your email.
+  utter_subscribed:
+    - text: Done! {name}, check your inbox at {email} in order to finish subscribing to the newsletter!
+    - text: You're all set, {name}! Check your inbox at {email} to confirm your subscription.
+
+# responses for 'contact_us' form
+  utter_contact_us:
+    - text: Please, answer the following questions so that we could contact you. 
+  utter_ask_name:
+    - text: What is your name?
+  utter_ask_email:
+    - text: What is your email address?
+  utter_ask_message:
+    - text: What would you like to ask or tell us?
+
+
+  utter_ask_continue:
+  - text: Are you sure you want to stop the form?
+
+
+  
+actions:
+  - utter_subscribed
+  - validate_newsletter_form
+  - validate_email
+  - validate_contact_us_form
+  - action_submit_newsletter
+ 
+
+      # buttons:
+      # - title: "Book a meeting"
+      #   payload: "/book_meeting"
+      # - title: "Contact us"
+      #   payload: "/contact_us"  
+  
+  # utter_faq/book_meeting:
+  #   - text: ""
+
+
+
+
+
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
